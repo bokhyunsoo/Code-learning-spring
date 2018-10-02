@@ -3,7 +3,20 @@
 <html>
 <head>
 	<title>Home</title>
+	<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 </head>
+<script>
+$.ajax({
+	  method: "GET",
+	  url: "doJSON",
+	  dataType: "JSON",
+	  success : function(result){
+		  alert(result.name);
+		  alert(result["name"]);
+		  alert(result['name']);
+	  }
+	});
+</script>
 <body>
 <h1>
 	Hello world!  
