@@ -15,4 +15,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	(#{userid},#{userpw},#{username},#{email})
 	</insert>
 	
+	<select id="selectMember" resultType="org.zerock.domain.MemberVO">
+	SELECT USERID, USERNAME, EMAIL, REGDATE, UPDATEDATE
+	FROM TBL_MEMBER
+	WHERE USERID = #{userid}
+	</select>
+	
+	<select id="readWithPW" resultType="org.zerock.domain.MemberVO">
+	SELECT USERID, USERNAME, EMAIL, REGDATE, UPDATEDATE
+	FROM TBL_MEMBER
+	WHERE USERID = #{userid}
+	AND USERPW = #{userpw}
+	</select>
 </mapper>
